@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    
+</head>
+<body>
+    <div class="container">
+        <% for(let i in animal) { %>
+            <h1 class="text-center"><%= animal[i].name %></h1>
+            <p class="text-center"> Class: <%= animal[i].class %></p>
+            <div class="text-center">
+
+                <img src="<%= animal[i].img %>" alt="" class="img-thumbnail" style="width: 600px; height: 400px;">
+            </div>
+            <br>
+            <div class="text-center">
+                <a href="/animal/edit/<%= animal[i]._id %>"><button class="btn btn-success">Edit <%= animal[i].name %></button></a>
+                <a href="/"><input type="submit" value="Skip to Animals" class="btn btn-info"></a> 
+                <a href="/animal/destroy/<%= animal[i]._id %>"><input type="submit" value="Delete <%= animal[i].name %>" class="btn btn-danger"></a> 
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

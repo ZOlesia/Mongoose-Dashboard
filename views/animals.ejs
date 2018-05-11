@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Your Favorite Animals</h1>
+        <div class="row">
+            <% for(var x in all_animals) {%>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <a href="/animal/<%= all_animals[x]._id %>">
+                            <img src="<%= all_animals[x].img %>" alt="" class="photosize" style="width: 315px; height: 250px;">
+                        </a>
+                        <div class="caption text-center">
+                            <p><%= all_animals[x].name %></p>
+                        </div>
+                    </div>   
+                </div>
+            <%}%>
+        </div>
+        <br>
+        <a href="/animals/new"><input type="submit" value="Add new Animal" class="btn btn-warning float-right"></a>  
+    </div>
+</body>
+</html>
